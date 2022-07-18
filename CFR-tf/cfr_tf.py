@@ -16,7 +16,7 @@ class CausalDB(object):
         self.mu0 = df['mu0'].values.reshape(-1,1)
         self.mu1 = df['mu1'].values.reshape(-1,1)
 
-def get_DataFrame(exp=0, path='data/IHDP_df.npz'):
+def get_DataFrame(exp=0, path='../IHDP_df.npz'):
     dataloader = np.load(path,allow_pickle=True,encoding='latin1')
     datas = dataloader['data']
 
@@ -94,7 +94,7 @@ def main():
 
     ''' Load dataset '''
     exp = 0
-    trainDB, validDB, testDB, _ = get_DataFrame(exp=exp, path='data/IHDP_df.npz')
+    trainDB, validDB, testDB, _ = get_DataFrame(exp=exp, path='../IHDP_df.npz')
     n, x_dim = trainDB.x.shape
 
     ''' Start Session '''
